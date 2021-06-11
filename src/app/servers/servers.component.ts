@@ -9,6 +9,7 @@ export class ServersComponent implements OnInit {
   allowNewServer = false;
   serverCreationStatus = 'No server created yet.';
   theInput = '';
+  username = '';
   ngOnInit(): void {}
   constructor() {
     setTimeout(() => {
@@ -21,5 +22,11 @@ export class ServersComponent implements OnInit {
   }
   onAddingInput(event: Event) {
     this.theInput = (<HTMLInputElement>event.target).value;
+  }
+  onAddingUserName(event: Event) {
+    this.username = (<HTMLInputElement>event.target).value;
+  }
+  onClickReset() {
+    this.username = '';
   }
 }

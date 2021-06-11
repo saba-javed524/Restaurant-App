@@ -1,6 +1,7 @@
 <label>Let's add and event here:</label>
 <!-- <input type="text" class="form-control" (input)="onAddingInput($event)" /> -->
 <input type="text" class="form-control" [(ngModel)]="theInput" /> <br />
+
 <!-- <p>{{ theInput }}</p> -->
 <button
   class="btn btn-primary"
@@ -11,4 +12,16 @@
 </button>
 <p>{{ serverCreationStatus }}</p>
 <p [innerText]="allowNewServer"></p>
-<app-server></app-server>
+<app-server></app-server><br />
+<hr />
+<h1>This is my assignment</h1>
+<label>Username:</label>
+<input type="text" class="form-control" [(ngModel)]="username" /> <br />
+<p>{{ username }}</p>
+<button
+  class="btn btn-primary"
+  [disabled]="username === ''"
+  (click)="onClickReset()"
+>
+  Username Button
+</button>
