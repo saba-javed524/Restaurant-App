@@ -3,15 +3,24 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-servers',
   templateUrl: './servers.component.html',
-  styleUrls: ['./servers.component.css'],
+  styles: [
+    `
+      .white-color {
+        color: white;
+      }
+    `,
+  ],
 })
 export class ServersComponent implements OnInit {
   allowNewServer = false;
+  showDetail = false;
   serverCreationStatus = 'No server created yet.';
   theInput = '';
   username = '';
   serverCreated = false;
+  details = '';
   serversList = [];
+  log = [];
 
   ngOnInit(): void {}
   constructor() {
@@ -33,5 +42,13 @@ export class ServersComponent implements OnInit {
   }
   onClickReset() {
     this.username = '';
+  }
+
+  displayDetails() {
+    this.details = 'This is my password : Tuna';
+  }
+  showDetails() {
+    this.showDetail = !this.showDetail;
+    this.log.push(this.log.length + 1);
   }
 }

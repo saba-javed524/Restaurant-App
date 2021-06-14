@@ -1,16 +1,16 @@
-<label>Let's add an event here:</label>
+<!-- <label>Let's add an event here:</label> -->
 <!-- <input type="text" class="form-control" (input)="onAddingInput($event)" /> -->
-<input type="text" class="form-control" [(ngModel)]="theInput" /> <br />
+<!-- <input type="text" class="form-control" [(ngModel)]="theInput" /> <br /> -->
 
 <!-- <p>{{ theInput }}</p> -->
-<button
+<!-- <button
   class="btn btn-primary"
   [disabled]="!allowNewServer"
   (click)="onServerCreation()"
 >
   Add Server
-</button>
-<p *ngIf="serverCreated; else noServer">
+</button> -->
+<!-- <p *ngIf="serverCreated; else noServer">
   Serve was created, serve name is {{ theInput }}
 </p>
 <ng-template #noServer>
@@ -21,9 +21,9 @@
 <hr />
 <hr />
 <hr />
-<hr />
+<hr /> -->
 
-<p>{{ serverCreationStatus }}</p>
+<!-- <p>{{ serverCreationStatus }}</p>
 <p [innerText]="allowNewServer"></p>
 <app-server *ngFor="let server of serversList"></app-server><br />
 <hr />
@@ -37,4 +37,18 @@
   (click)="onClickReset()"
 >
   Username Button
-</button>
+</button> -->
+<h1>Assignment</h1>
+<br />
+<button class="btn btn-primary" (click)="showDetails()">Display Details</button>
+
+<br /><br />
+<label>Details</label>
+<p *ngIf="showDetail">My password is : "Tuna"</p>
+<p
+  *ngFor="let logItems of log"
+  [ngStyle]="{ backgroundColor: logItems >= 5 ? 'blue' : 'transparent' }"
+  [ngClass]="{ 'white-color': logItems >= 5 }"
+>
+  {{ logItems }}
+</p>
