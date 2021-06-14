@@ -1,5 +1,23 @@
-<h3>I am Server Component</h3>
-<p>
-  The {{ "Server" }} with {{ serverID }} is {{ getServerStatus() }} at the
+<h3>{{ serverIDOne }}</h3>
+<!-- <h3>{{ serverIDTwo }}</h3> -->
+
+<p
+  [ngStyle]="{ backgroundColor: getColorOne() }"
+  [ngClass]="{
+    online: serverStatusOne === 'online',
+    offline: serverStatusOne === 'offline'
+  }"
+>
+  The {{ "Server" }} with {{ serverIDOne }} is {{ getServerStatusOne() }} at the
   moment!
 </p>
+<!-- <p
+  [ngStyle]="{ backgroundColor: getColorTwo() }"
+  [ngClass]="{
+    online: serverStatusTwo === 'online',
+    offline: serverStatusTwo === 'offline'
+  }"
+>
+  The {{ "Server" }} with {{ serverIDTwo }} is {{ getServerStatusTwo() }} at the
+  moment!
+</p> -->

@@ -1,4 +1,4 @@
-<label>Let's add and event here:</label>
+<label>Let's add an event here:</label>
 <!-- <input type="text" class="form-control" (input)="onAddingInput($event)" /> -->
 <input type="text" class="form-control" [(ngModel)]="theInput" /> <br />
 
@@ -10,9 +10,22 @@
 >
   Add Server
 </button>
+<p *ngIf="serverCreated; else noServer">
+  Serve was created, serve name is {{ theInput }}
+</p>
+<ng-template #noServer>
+  <p>No server was created</p>
+</ng-template>
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+
 <p>{{ serverCreationStatus }}</p>
 <p [innerText]="allowNewServer"></p>
-<app-server></app-server><br />
+<app-server *ngFor="let server of serversList"></app-server><br />
 <hr />
 <h1>This is my assignment</h1>
 <label>Username:</label>
